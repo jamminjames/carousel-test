@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Carousel Test Page</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="en-us">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jcarousel -->
+    <link rel="stylesheet" type="text/css" href="jcarousel/jcarousel.responsive.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jcarousel/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="jcarousel/jcarousel.responsive.js"></script>
+	<script type="text/javascript" src="jcarousel/jquery.touchwipe.min.js"></script>
+	
+<!-- END jcarousel -->
+</head>
+
+<body>
+
+<div id="wrapper" class="fix">
+<div id="container">
+
+
+<center>
+           <div id="carousel-wrap" class="jcarousel-wrapper">
+                <div id="carousel" class="jcarousel">
+                    <ul>
+                        <li><a href="images/HT-cover-1.jpg"><img src="images/HT-cover-1-sm.jpg" alt="Humor Times covers" /></a></li>
+                        <li><a href="images/HT-cover-2.jpg"><img src="images/HT-cover-2-sm.jpg" alt="Humor Times covers" /></a></li>
+                        <li><a href="images/HT-cover-3.jpg"><img src="images/HT-cover-3-sm.jpg" alt="Humor Times covers" /></a></li>
+                        <li><a href="images/HT-cover-4.jpg"><img src="images/HT-cover-4-sm.jpg" alt="Humor Times covers" /></a></li>
+                        <li><a href="images/HT-cover-5.jpg"><img src="images/HT-cover-5-sm.jpg" alt="Humor Times covers" /></a></li>
+                        <li><a href="images/HT-cover-6.jpg"><img src="images/HT-cover-6-sm.jpg" alt="Humor Times covers" /></a></li>
+                    </ul>
+                </div>
+
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+                <p class="jcarousel-pagination"></p>
+            </div>
+
+<br><br>
+
+
+</div><!-- End container div -->
+
+</div><!-- End Wrapper div -->
+
+<!-- Touchswipe script for carousel -->
+<script>
+$(document).ready(function() {
+	$('#carousel').cycle({
+		timeout: 0,
+		fx: 'scrollHorz',
+		next: '#next',
+		prev: '#prev' 
+	});
+ 
+	$("#carousel").touchwipe({
+ 		wipeLeft: function() {
+ 	 		$("#carousel").cycle("next");
+ 		},
+ 		wipeRight: function() {
+ 	 		$("#carousel").cycle("prev");
+ 		}
+	});
+});
+</script> 
+	
+</body>
+</html>
